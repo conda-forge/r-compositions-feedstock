@@ -1,4 +1,4 @@
-{% set version = '1.40-2' %}
+{% set version = '1.40-3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,42 +7,36 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: compositions_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/compositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/compositions/compositions_{{ version }}.tar.gz
-  sha256: 110d71ae000561987cb73fc76cd953bd69d37562cb401ed3c36dca137d01b78a
+  sha256: e42d90950a63aa7f707bc5025dbf265b63fc02a5b7137bc71836b8bc625d7080
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
-  skip: true  # [win32]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
-    - {{posix}}sed               # [win]
-    - {{posix}}coreutils         # [win]
     - {{posix}}sed               # [win]
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
   host:
     - r-base
     - r-bayesm
-    - r-energy
     - r-robustbase
     - r-tensora
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-bayesm
-    - r-energy
     - r-robustbase
     - r-tensora
 
@@ -53,20 +47,31 @@ test:
 
 about:
   home: http://www.stat.boogaart.de/compositions
-  license: GPL (>= 2)
-  summary: Provides functions for the consistent analysis of compositional  data (e.g. portions
-    of substances) and positive numbers (e.g. concentrations)  in the way proposed by
+  license: GPL-2
+  summary: Provides functions for the consistent analysis of compositional data (e.g. portions
+    of substances) and positive numbers (e.g. concentrations) in the way proposed by
     J. Aitchison and V. Pawlowsky-Glahn.
-  license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_family: GPL2
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
     - apcamargo
+
+# Package: compositions
+# Version: 1.40-3
+# Date: 2019-11-25
+# Title: Compositional Data Analysis
+# Author: K. Gerald van den Boogaart <boogaart@hzdr.de>, Raimon Tolosana-Delgado, Matevz Bren
+# Maintainer: K. Gerald van den Boogaart <support@boogaart.de>
+# Depends: R (>= 2.2.0), tensorA, robustbase, bayesm
+# Suggests: rgl,combinat, energy
+# Description: Provides functions for the consistent analysis of compositional data (e.g. portions of substances) and positive numbers (e.g. concentrations) in the way proposed by J. Aitchison and V. Pawlowsky-Glahn.
+# License: GPL (>= 2)
+# URL: http://www.stat.boogaart.de/compositions
+# NeedsCompilation: yes
+# Packaged: 2019-10-25 13:41:53 UTC; tolosa53
+# Repository: CRAN
+# Date/Publication: 2019-10-25 15:20:02 UTC
