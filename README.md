@@ -5,7 +5,7 @@ Home: http://www.stat.boogaart.de/compositions
 
 Package license: GPL-2
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Provides functions for the consistent analysis of compositional data (e.g. portions of substances) and positive numbers (e.g. concentrations) in the way proposed by J. Aitchison and V. Pawlowsky-Glahn.
 
