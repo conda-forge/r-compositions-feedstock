@@ -3,7 +3,7 @@ About r-compositions
 
 Home: http://www.stat.boogaart.de/compositions
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
