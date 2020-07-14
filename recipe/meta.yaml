@@ -30,12 +30,14 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-mass
     - r-bayesm
     - r-robustbase
     - r-tensora
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
+    - {{native}}gcc-libs         # [win]
+    - r-mass
     - r-bayesm
     - r-robustbase
     - r-tensora
