@@ -1,4 +1,4 @@
-{% set version = "2.0-0" %}
+{% set version = "2.0-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/compositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/compositions/compositions_{{ version }}.tar.gz
-  sha256: 19cb515e5e61348c1f3672c8d00e8c3491c84774716729e62559e0948c255d77
+  sha256: 84a291308faf858e5a9d9570135c2da5e57b0887f407903485fa85d09da61a0f
 
 build:
   merge_build_host: true  # [win]
@@ -36,7 +36,7 @@ requirements:
     - r-tensora
   run:
     - r-base
-    - {{native}}gcc-libs         # [win]
+    - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-bayesm
     - r-robustbase
