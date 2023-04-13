@@ -1,11 +1,22 @@
+About r-compositions-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-compositions-feedstock/blob/main/LICENSE.txt)
+
 About r-compositions
-====================
+--------------------
 
 Home: http://www.stat.boogaart.de/compositions
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-compositions-feedstock/blob/main/LICENSE.txt)
+Summary: Provides functions for the consistent analysis of compositional data (e.g. portions of substances) and positive numbers (e.g. concentrations) in the way proposed by J. Aitchison and V. Pawlowsky-Glahn.
+About r-compositions
+--------------------
+
+Home: http://www.stat.boogaart.de/compositions
+
+Package license: GPL-2.0-or-later
 
 Summary: Provides functions for the consistent analysis of compositional data (e.g. portions of substances) and positive numbers (e.g. concentrations) in the way proposed by J. Aitchison and V. Pawlowsky-Glahn.
 
