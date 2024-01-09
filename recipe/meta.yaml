@@ -1,4 +1,4 @@
-{% set version = "2.0-6" %}
+{% set version = "2.0-7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/compositions_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/compositions/compositions_{{ version }}.tar.gz
-  sha256: 45d374ebfdcc2c9f6cc738d196caf83a2297ed2aefe2cc99007fcbeb78a61c34
+  sha256: b44221b63c2cd39c75ea797088c7dcafcffd088774b6743080dc9f35295038c8
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
