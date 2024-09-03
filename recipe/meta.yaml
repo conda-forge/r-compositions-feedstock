@@ -23,7 +23,7 @@ requirements:
     - r-bayesm                   # [build_platform != target_platform]
     - r-mass                     # [build_platform != target_platform]
     - r-robustbase               # [build_platform != target_platform]
-    - r-tensorav                 # [build_platform != target_platform]
+    - r-tensora                  # [build_platform != target_platform]
     - {{ compiler('c') }}        # [not win]
     - {{ stdlib("c") }}          # [not win]
     - {{ compiler('m2w64_c') }}  # [win]
