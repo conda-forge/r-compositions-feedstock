@@ -19,27 +19,32 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ posix }}filesystem        # [win]
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-bayesm                   # [build_platform != target_platform]
+    - r-mass                     # [build_platform != target_platform]
+    - r-robustbase               # [build_platform != target_platform]
+    - r-tensorav                 # [build_platform != target_platform]
+    - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
     - r-base
-    - r-mass
     - r-bayesm
+    - r-mass
     - r-robustbase
     - r-tensora
     - libblas
     - liblapack
   run:
     - r-base
-    - r-mass
     - r-bayesm
+    - r-mass
     - r-robustbase
     - r-tensora
 
@@ -55,24 +60,9 @@ about:
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
     - apcamargo
-
-# Package: compositions
-# Version: 1.40-3
-# Date: 2019-11-25
-# Title: Compositional Data Analysis
-# Author: K. Gerald van den Boogaart <boogaart@hzdr.de>, Raimon Tolosana-Delgado, Matevz Bren
-# Maintainer: K. Gerald van den Boogaart <support@boogaart.de>
-# Depends: R (>= 2.2.0), tensorA, robustbase, bayesm
-# Suggests: rgl,combinat, energy
-# Description: Provides functions for the consistent analysis of compositional data (e.g. portions of substances) and positive numbers (e.g. concentrations) in the way proposed by J. Aitchison and V. Pawlowsky-Glahn.
-# License: GPL (>= 2)
-# URL: http://www.stat.boogaart.de/compositions
-# NeedsCompilation: yes
-# Packaged: 2019-10-25 13:41:53 UTC; tolosa53
-# Repository: CRAN
-# Date/Publication: 2019-10-25 15:20:02 UTC
