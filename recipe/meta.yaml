@@ -21,6 +21,11 @@ requirements:
   build:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - r-bayesm                   # [build_platform != target_platform]
+    - r-tensora                  # [build_platform != target_platform]
+    - r-mass                     # [build_platform != target_platform]
+    - r-robustbase               # [build_platform != target_platform]
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-bayesm                   # [build_platform != target_platform]
     - r-mass                     # [build_platform != target_platform]
     - r-robustbase               # [build_platform != target_platform]
     - r-tensora                  # [build_platform != target_platform]
